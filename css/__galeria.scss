@@ -1,0 +1,39 @@
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+   
+    gap: 1em;
+    margin: 0;
+    img{
+        display: block;
+        object-fit: cover;
+        object-position: center right;
+        transform: scale(1);
+        transition: .3s ease-in-out;
+        &:not(:first-of-type):hover{
+            box-shadow: 0 0 0 5px white,
+                        0 0 0 10px black;
+            
+            transform: scale(.90);
+            cursor: help;
+        }
+    
+        
+    }
+    
+}
+
+@media (min-width: $min-width){
+    .galeria{
+        grid-auto-flow: row dense;
+        img{
+            &:first-child{               
+                grid-column: span 3;
+                grid-row: span 3;
+                box-shadow: 0 0 0 5px white,
+                0 0 0 10px black;             
+            }
+        }
+    }
+}
+

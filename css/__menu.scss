@@ -1,0 +1,76 @@
+.menu--principal{
+    background-color: $colorPrimario;
+    border-radius: .5em;
+    li{
+        
+       
+        border-bottom: 2px solid rgba($colorPrimario--visited,.1);       
+        text-transform: uppercase;
+        
+       // transition-delay: .2ms;
+        /*
+        transition-duration: tiempo que dura la transiciónes. valores posibles 0s o 0ms
+        transition-delay: retardo entre una transición y otra. valores posibles 0s o 0ms
+        transition-timing-function: efecto en la duración de la transición. Valores (linear, ease-in, step-in, ease-out...)
+        transition-property: propiedades css a lo que se va a realizar la transición
+        transition: short hand o atajo que reúne todas las anteriores        
+        */
+
+        transition: background-color .3s ease-in-out;
+         
+        
+        &:hover{
+            background-color: $colorPrimario--hover;
+            
+            &:first-child{
+                border-radius: .5em .5em 0 0;
+            }
+            &:last-child{
+                border-radius: 0 0 .5em .5em;
+            }
+        }
+
+        &:last-child{
+            border-bottom-width: 0;
+        }       
+       
+        a{
+            display: block;
+            padding-left: .5em;
+            color: white;
+            font-weight: 500;
+            line-height: 3em;
+            &:active{
+                background-color: $colorPrimario--visited;
+            }
+        }
+    }
+}
+
+@media (min-width:$min-width){
+    .menu--principal{
+      display: flex;
+      border-radius: initial;
+      li{
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: auto;
+          border-bottom-style: none;
+          border-right: 2px solid rgba($colorPrimario--visited,.1);
+          a{
+              padding: initial;
+              text-align: center;
+          }
+          &:hover{
+            border-radius: initial;
+            &:first-child{
+                border-radius: initial;
+            }
+            &:last-child{
+                border-radius: initial;
+            }
+          }
+      }
+       
+    }
+}

@@ -1,0 +1,31 @@
+:root{
+    font-family: $fuentePrincipal;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,li{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    width: 90%;
+    margin:auto;
+}
